@@ -48,7 +48,8 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
             </div>
           </div>
 
-          <CheckoutButton event={event} />
+          {/* checkoutButton hereeeeee */}
+          {/* <CheckoutButton event={event} /> */}
 
           <div className="flex flex-col gap-5">
             <div className='flex gap-2 md:gap-3'>
