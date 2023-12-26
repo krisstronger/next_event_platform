@@ -48,6 +48,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
     defaultValues: initialValues
   })
  
+  //create event button logic
   async function onSubmit(values: z.infer<typeof eventFormSchema>) {
     let uploadedImageUrl = values.imageUrl;
 
