@@ -7,8 +7,7 @@ import Image from 'next/image';
 
 const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
   const event = await getEventById(id);
-  console.log(event);
-  
+
   const relatedEvents = await getRelatedEventsByCategory({
     categoryId: event.category._id,
     eventId: event._id,
@@ -48,8 +47,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
             </div>
           </div>
 
-          {/* checkoutButton hereeeeee */}
-          {/* <CheckoutButton event={event} /> */}
+          <CheckoutButton event={event} />
 
           <div className="flex flex-col gap-5">
             <div className='flex gap-2 md:gap-3'>
