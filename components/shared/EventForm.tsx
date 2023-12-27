@@ -48,7 +48,6 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
     defaultValues: initialValues
   })
  
-  //create event button logic
   async function onSubmit(values: z.infer<typeof eventFormSchema>) {
     let uploadedImageUrl = values.imageUrl;
 
@@ -63,8 +62,6 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
     }
 
     if(type === 'Create') {
-      console.log("in create method of submit");
-      
       try {
         const newEvent = await createEvent({
           event: { ...values, imageUrl: uploadedImageUrl },
@@ -211,7 +208,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         onChange={(date: Date) => field.onChange(date)} 
                         showTimeSelect
                         timeInputLabel="Time:"
-                        dateFormat="dd/MM/yyyy h:mm aa"
+                        dateFormat="MM/dd/yyyy h:mm aa"
                         wrapperClassName="datePicker"
                       />
                     </div>
@@ -242,7 +239,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         onChange={(date: Date) => field.onChange(date)} 
                         showTimeSelect
                         timeInputLabel="Time:"
-                        dateFormat="dd/MM/yyyy h:mm aa"
+                        dateFormat="MM/dd/yyyy h:mm aa"
                         wrapperClassName="datePicker"
                       />
                     </div>

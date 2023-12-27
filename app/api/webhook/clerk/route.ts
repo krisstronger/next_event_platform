@@ -28,7 +28,7 @@ export async function POST(req: Request) {
   }
  
   // Get the body
-  const payload = await req.json();
+  const payload = await req.json()
   const body = JSON.stringify(payload);
  
   // Create a new Svix instance with your secret.
@@ -66,7 +66,6 @@ export async function POST(req: Request) {
       photo: image_url,
     }
 
-    //createUser is defined in lib/user.actions for DB
     const newUser = await createUser(user);
 
     if(newUser) {
